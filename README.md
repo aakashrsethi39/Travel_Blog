@@ -127,7 +127,7 @@ docker compose version
 # Clone Repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/aakashrsethi39/Travel_Blog.git
 
 cd Travel_Blog
 ```
@@ -137,7 +137,7 @@ cd Travel_Blog
 # Build and Run
 
 ```bash
-docker compose up --build -d
+docker compose up --build -d [this will create a new image or else it will use cache ]
 ```
 
 Check containers
