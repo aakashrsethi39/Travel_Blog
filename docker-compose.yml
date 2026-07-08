@@ -13,6 +13,7 @@ services:
 
     volumes:
       - ./backend/data:/data
+      - mongo-data:/data/db
 
     networks:
       - app-network
@@ -99,6 +100,7 @@ services:
 
 volumes:
   data:
+  mongo-data:
 
 networks:
   app-network:
