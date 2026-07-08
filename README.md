@@ -186,7 +186,7 @@ After the MongoDB container is running, import the sample dataset.
 docker exec -it 7f  mongoimport --db wanderlust --collection posts --file ./data/sample_posts.json --jsonArray
 ```
 
-<img width="940" height="529" alt="image" src="https://github.com/user-attachments/assets/dd0c8188-c4a0-4d9a-ba27-ba90f989a2d6" />
+<img width="800" height="329" alt="image" src="https://github.com/user-attachments/assets/dd0c8188-c4a0-4d9a-ba27-ba90f989a2d6" />
 
 ---
 
