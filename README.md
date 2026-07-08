@@ -242,8 +242,7 @@ MONGODB_URI="mongodb://mongodb/wanderlust" [mongo container name]
 CORS_ORIGIN="http://<EC2_PUBLIC_IP>:5173"  [if u get the cors error]
 
 ```
-
-<img width="1122" height="631" alt="image" src="https://github.com/user-attachments/assets/1f0c8f67-dc6a-45ef-85f7-3b178dd5e21e" />
+<img width="889" height="632" alt="image" src="https://github.com/user-attachments/assets/f322fa35-752f-48c4-93af-e71cd1c4f073" />
 
 ---
 
@@ -298,21 +297,23 @@ MongoDB (27017) should remain private and should **not** be exposed publicly.
 
 Frontend
 
-<img width="1122" height="631" alt="image" src="https://github.com/user-attachments/assets/d921511d-8e1b-47b5-8eb2-a43c0e9440bb" />
+<img width="1125" height="633" alt="image" src="https://github.com/user-attachments/assets/512b044c-dd02-4340-b227-bbc07d922fea" />
 
 
-<img width="1122" height="631" alt="image" src="https://github.com/user-attachments/assets/65f8e59d-df0c-4d0d-b7e8-89cb1b36976c" />
+<img width="1143" height="643" alt="image" src="https://github.com/user-attachments/assets/f0089914-def3-499c-9ce3-b37faf956fe5" />
 
 
-<img width="1122" height="631" alt="image" src="https://github.com/user-attachments/assets/d2c78562-456a-41dd-bb7d-09d792dd47e6" />
+<img width="1222" height="688" alt="image" src="https://github.com/user-attachments/assets/02d7fbbf-614b-4d78-86b2-a12b6acaf023" />
+
 
 
 Backend API
 
-<img width="1122" height="631" alt="image" src="https://github.com/user-attachments/assets/08d09e72-a2e9-495f-b52b-87a7ace7ed87" />
+<img width="1022" height="253" alt="image" src="https://github.com/user-attachments/assets/93687c7c-f19f-43d0-aa8a-ad564240d1a4" />
 
 
-<img width="1122" height="631" alt="image" src="https://github.com/user-attachments/assets/b29eec10-0d6f-4c62-8929-52afb5a9cf3e" />
+<img width="1132" height="637" alt="image" src="https://github.com/user-attachments/assets/e0660e9a-6195-450e-b853-81dcf5f5c962" />
+
 
 ---
 
