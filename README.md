@@ -294,9 +294,9 @@ MongoDB (27017) should remain private and should **not** be exposed publicly.
 ---
 
 # Access Application
-
+```
 Frontend
-
+```
 <img width="1125" height="633" alt="image" src="https://github.com/user-attachments/assets/512b044c-dd02-4340-b227-bbc07d922fea" />
 
 
@@ -306,8 +306,9 @@ Frontend
 <img width="1222" height="688" alt="image" src="https://github.com/user-attachments/assets/02d7fbbf-614b-4d78-86b2-a12b6acaf023" />
 
 
-
+```
 Backend API
+```
 
 <img width="1022" height="253" alt="image" src="https://github.com/user-attachments/assets/93687c7c-f19f-43d0-aa8a-ad564240d1a4" />
 
