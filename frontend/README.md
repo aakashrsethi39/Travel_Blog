@@ -165,16 +165,6 @@ The project uses Docker Compose for:
 
 All services communicate over an internal Docker network.
 
-Instead of localhost, containers communicate using service names.
-
-Example
-
-```
-mongodb://mongo:27017/wanderlust
-```
-
----
-
 # Persistent Database Storage
 
 MongoDB data is persisted using bind mounts.
@@ -192,34 +182,13 @@ Database files remain available even if the container is restarted.
 
 After the MongoDB container is running, import the sample dataset.
 
-Execute:
-
 ```bash
-docker exec -it <mongodb-container-name> bash
+docker exec -it 7f  mongoimport --db wanderlust --collection posts --file ./data/sample_posts.json --jsonArray
 ```
-
-Run:
-
-```bash
-mongoimport \
-  --db wanderlust \
-  --collection posts \
-  --file /data/sample_posts.json \
-  --jsonArray
 ```
+<img width="940" height="529" alt="image" src="https://github.com/user-attachments/assets/ddbafe32-b337-4e6d-80c4-fc1e7baf4084" />
 
-Verify:
-
-```bash
-mongosh
 ```
-
-```javascript
-use wanderlust
-
-db.posts.find()
-```
-
 ---
 
 # Health Checks
@@ -263,15 +232,17 @@ restart: always
 Frontend
 
 ```
-VITE_API_PATH=http://<EC2_PUBLIC_IP>:5000
+VITE_API_PATH="http://<EC2_PUBLIC_IP>:5000"  
 ```
 
 Backend
 
 ```
-ATLASDB_URL=mongodb://mongo:27017/wanderlust
+MONGODB_URI="mongodb://mongodb/wanderlust" [mongo container name]
+CORS_ORIGIN="http://<EC2_PUBLIC_IP>:5173"  [if u get the cors error]
 
-PORT=5000
+<img width="940" height="500" alt="image" src="https://github.com/user-attachments/assets/d0ee9dab-d1ff-4adc-ba7d-af4a0366e779" />
+
 ```
 
 ---
@@ -307,47 +278,6 @@ Frontend logs
 ```bash
 docker logs frontend
 ```
-
----
-
-# Useful Docker Commands
-
-Build
-
-```bash
-docker compose build
-```
-
-Start
-
-```bash
-docker compose up -d
-```
-
-Stop
-
-```bash
-docker compose down
-```
-
-Restart
-
-```bash
-docker compose restart
-```
-
-List containers
-
-```bash
-docker ps
-```
-
-Remove unused Docker resources
-
-```bash
-docker system prune -a
-```
-
 ---
 
 # AWS Security Group
@@ -359,7 +289,6 @@ Allow the following inbound rules
 | 22 | SSH |
 | 5000 | Backend API |
 | 5173 | Frontend (Development) |
-| 80 | Nginx (Optional) |
 
 MongoDB (27017) should remain private and should **not** be exposed publicly.
 
@@ -370,65 +299,27 @@ MongoDB (27017) should remain private and should **not** be exposed publicly.
 Frontend
 
 ```
-http://<EC2_PUBLIC_IP>:5173
+<img width="940" height="529" alt="image" src="https://github.com/user-attachments/assets/ca273d87-bc7b-4618-8f4d-eb85d3c3118a" />
+
+```
+```
+<img width="940" height="529" alt="image" src="https://github.com/user-attachments/assets/6e5a8c29-ed03-420d-b667-00c1b62c0f6f" />
+```
+```
+<img width="940" height="529" alt="image" src="https://github.com/user-attachments/assets/bafb1773-ea25-4386-88cd-02914213ccd1" />
+
 ```
 
 Backend API
 
 ```
-http://<EC2_PUBLIC_IP>:5000
-```
-
----
-
-# Troubleshooting
-
-## Docker Build Fails
-
-Remove Docker cache
-
-```bash
-docker system prune -a
-docker builder prune -a
-```
-
----
-
-## Disk Full
-
-Check disk usage
-
-```bash
-df -h
-```
-
-Increase EBS storage if required.
-
-Expand filesystem
-
-```bash
-sudo growpart /dev/nvme0n1 1
-sudo resize2fs /dev/nvme0n1p1
-```
-
----
-
-## MongoDB Connection Error
-
-Ensure the backend connects using the Docker Compose service name.
-
-Correct
+<img width="940" height="233" alt="image" src="https://github.com/user-attachments/assets/ada29365-9e11-47f1-b59f-15a985083df3" />
 
 ```
-mongodb://mongo:27017/wanderlust
 ```
-
-Incorrect
+<img width="940" height="529" alt="image" src="https://github.com/user-attachments/assets/6d56e104-fe64-4a77-8bd5-33afa6ee3e1c" />
 
 ```
-mongodb://localhost:27017/wanderlust
-```
-
 ---
 
 # Assignment Objectives Covered
