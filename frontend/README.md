@@ -14,8 +14,11 @@ Travel Blog is a full-stack web application containerized using Docker and deplo
 - **Cloud Platform:** AWS EC2
 - **Database Persistence:** Docker Volumes
 
+---
+
 # Project Structure
 
+```
 Travel_Blog/
 │
 ├── frontend/
@@ -32,6 +35,9 @@ Travel_Blog/
 │
 ├── docker-compose.yml
 └── README.md
+```
+
+---
 
 # Architecture
 
@@ -72,45 +78,75 @@ Travel_Blog/
 
 Update packages
 
+```bash
 sudo apt update
 sudo apt upgrade -y
+```
 
 Install Git
 
+```bash
 sudo apt install git -y
+```
 
 Install Docker
 
+```bash
 sudo apt install docker.io -y
+```
 
 Enable Docker
 
+```bash
 sudo systemctl enable docker
 sudo systemctl start docker
+```
 
 Allow current user to run Docker
 
+```bash
 sudo usermod -aG docker $USER
 newgrp docker
+```
 
 Install Docker Compose
 
+```bash
 sudo apt install docker-compose-v2 -y
+```
 
 Verify installation
 
+```bash
 docker --version
 docker compose version
+```
+
+---
 
 # Clone Repository
 
-git clone https://github.com/aakashrsethi39/Travel_Blog.git
+```bash
+git clone <repository-url>
+
 cd Travel_Blog
+```
+
+---
 
 # Build and Run
 
-docker compose up --build -d [This creates new Docker images or else it will make use of the stored data in the cache]
+```bash
+docker compose up --build -d
+```
+
+Check containers
+
+```bash
 docker ps
+```
+
+---
 
 # Docker Compose Features
 
@@ -129,20 +165,62 @@ The project uses Docker Compose for:
 
 All services communicate over an internal Docker network.
 
+Instead of localhost, containers communicate using service names.
+
+Example
+
+```
+mongodb://mongo:27017/wanderlust
+```
+
+---
+
 # Persistent Database Storage
 
 MongoDB data is persisted using bind mounts.
 
+```yaml
 volumes:
   - ./backend/data:/data
+```
 
 Database files remain available even if the container is restarted.
+
+---
 
 # Import Sample Data
 
 After the MongoDB container is running, import the sample dataset.
 
-docker exec -it 37de  mongoimport --db wanderlust --collection posts --file ./data/sample_posts.json --jsonArray
+Execute:
+
+```bash
+docker exec -it <mongodb-container-name> bash
+```
+
+Run:
+
+```bash
+mongoimport \
+  --db wanderlust \
+  --collection posts \
+  --file /data/sample_posts.json \
+  --jsonArray
+```
+
+Verify:
+
+```bash
+mongosh
+```
+
+```javascript
+use wanderlust
+
+db.posts.find()
+```
+
+---
 
 # Health Checks
 
@@ -150,53 +228,127 @@ Health checks are configured using Docker Compose.
 
 Backend
 
+```yaml
 healthcheck:
   test: ["CMD-SHELL","curl -f http://localhost:5000 || exit 1"]
   interval: 10s
   timeout: 5s
   retries: 5
+```
 
 MongoDB
 
+```yaml
 healthcheck:
   test: ["CMD","mongosh","--eval","db.adminCommand('ping')"]
   interval: 10s
   timeout: 5s
   retries: 5
+```
+
+---
 
 # Restart Policy
 
 Containers automatically restart after failures.
 
+```yaml
 restart: always
+```
+
+---
 
 # Environment Variables
 
 Frontend
 
-VITE_API_PATH="http://13.233.124.176:5000"
+```
+VITE_API_PATH=http://<EC2_PUBLIC_IP>:5000
+```
 
 Backend
 
-MONGODB_URI="mongodb://mongodb/wanderlust"
-CORS_ORIGIN="http://13.233.124.176:5173"
+```
+ATLASDB_URL=mongodb://mongo:27017/wanderlust
+
+PORT=5000
+```
 
 ---
 
 # Logging
 
+View all logs
+
+```bash
+docker compose logs
+```
+
+Live logs
+
+```bash
+docker compose logs -f
+```
+
 Backend logs
 
+```bash
 docker logs backend
+```
 
 MongoDB logs
 
+```bash
 docker logs mongo
+```
 
 Frontend logs
 
+```bash
 docker logs frontend
+```
 
+---
+
+# Useful Docker Commands
+
+Build
+
+```bash
+docker compose build
+```
+
+Start
+
+```bash
+docker compose up -d
+```
+
+Stop
+
+```bash
+docker compose down
+```
+
+Restart
+
+```bash
+docker compose restart
+```
+
+List containers
+
+```bash
+docker ps
+```
+
+Remove unused Docker resources
+
+```bash
+docker system prune -a
+```
+
+---
 
 # AWS Security Group
 
