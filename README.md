@@ -186,7 +186,7 @@ After the MongoDB container is running, import the sample dataset.
 docker exec -it 7f  mongoimport --db wanderlust --collection posts --file ./data/sample_posts.json --jsonArray
 ```
 ```
-<img width="940" height="529" alt="image" src="https://github.com/user-attachments/assets/ddbafe32-b337-4e6d-80c4-fc1e7baf4084" />
+<img width="940" height="529" alt="image" src="https://github.com/user-attachments/assets/dd0c8188-c4a0-4d9a-ba27-ba90f989a2d6" />
 
 ```
 ---
@@ -241,10 +241,11 @@ Backend
 MONGODB_URI="mongodb://mongodb/wanderlust" [mongo container name]
 CORS_ORIGIN="http://<EC2_PUBLIC_IP>:5173"  [if u get the cors error]
 
-<img width="940" height="500" alt="image" src="https://github.com/user-attachments/assets/d0ee9dab-d1ff-4adc-ba7d-af4a0366e779" />
+```
+```
+<img width="940" height="431" alt="image" src="https://github.com/user-attachments/assets/1f0c8f67-dc6a-45ef-85f7-3b178dd5e21e" />
 
 ```
-
 ---
 
 # Logging
@@ -299,25 +300,27 @@ MongoDB (27017) should remain private and should **not** be exposed publicly.
 Frontend
 
 ```
-<img width="940" height="529" alt="image" src="https://github.com/user-attachments/assets/ca273d87-bc7b-4618-8f4d-eb85d3c3118a" />
+<img width="940" height="529" alt="image" src="https://github.com/user-attachments/assets/d921511d-8e1b-47b5-8eb2-a43c0e9440bb" />
 
 ```
 ```
-<img width="940" height="529" alt="image" src="https://github.com/user-attachments/assets/6e5a8c29-ed03-420d-b667-00c1b62c0f6f" />
+<img width="940" height="529" alt="image" src="https://github.com/user-attachments/assets/65f8e59d-df0c-4d0d-b7e8-89cb1b36976c" />
+
 ```
 ```
-<img width="940" height="529" alt="image" src="https://github.com/user-attachments/assets/bafb1773-ea25-4386-88cd-02914213ccd1" />
+<img width="940" height="529" alt="image" src="https://github.com/user-attachments/assets/d2c78562-456a-41dd-bb7d-09d792dd47e6" />
 
 ```
 
 Backend API
 
 ```
-<img width="940" height="233" alt="image" src="https://github.com/user-attachments/assets/ada29365-9e11-47f1-b59f-15a985083df3" />
+<img width="940" height="233" alt="image" src="https://github.com/user-attachments/assets/08d09e72-a2e9-495f-b52b-87a7ace7ed87" />
+
 
 ```
 ```
-<img width="940" height="529" alt="image" src="https://github.com/user-attachments/assets/6d56e104-fe64-4a77-8bd5-33afa6ee3e1c" />
+<img width="940" height="529" alt="image" src="https://github.com/user-attachments/assets/b29eec10-0d6f-4c62-8929-52afb5a9cf3e" />
 
 ```
 ---
