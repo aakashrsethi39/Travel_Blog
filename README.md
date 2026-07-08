@@ -185,10 +185,9 @@ After the MongoDB container is running, import the sample dataset.
 ```bash
 docker exec -it 7f  mongoimport --db wanderlust --collection posts --file ./data/sample_posts.json --jsonArray
 ```
-```
+
 <img width="940" height="529" alt="image" src="https://github.com/user-attachments/assets/dd0c8188-c4a0-4d9a-ba27-ba90f989a2d6" />
 
-```
 ---
 
 # Health Checks
@@ -242,10 +241,9 @@ MONGODB_URI="mongodb://mongodb/wanderlust" [mongo container name]
 CORS_ORIGIN="http://<EC2_PUBLIC_IP>:5173"  [if u get the cors error]
 
 ```
-```
+
 <img width="940" height="431" alt="image" src="https://github.com/user-attachments/assets/1f0c8f67-dc6a-45ef-85f7-3b178dd5e21e" />
 
-```
 ---
 
 # Logging
@@ -299,30 +297,22 @@ MongoDB (27017) should remain private and should **not** be exposed publicly.
 
 Frontend
 
-```
 <img width="940" height="529" alt="image" src="https://github.com/user-attachments/assets/d921511d-8e1b-47b5-8eb2-a43c0e9440bb" />
 
-```
-```
+
 <img width="940" height="529" alt="image" src="https://github.com/user-attachments/assets/65f8e59d-df0c-4d0d-b7e8-89cb1b36976c" />
 
-```
-```
+
 <img width="940" height="529" alt="image" src="https://github.com/user-attachments/assets/d2c78562-456a-41dd-bb7d-09d792dd47e6" />
 
-```
 
 Backend API
 
-```
 <img width="940" height="233" alt="image" src="https://github.com/user-attachments/assets/08d09e72-a2e9-495f-b52b-87a7ace7ed87" />
 
 
-```
-```
 <img width="940" height="529" alt="image" src="https://github.com/user-attachments/assets/b29eec10-0d6f-4c62-8929-52afb5a9cf3e" />
 
-```
 ---
 
 # Assignment Objectives Covered
